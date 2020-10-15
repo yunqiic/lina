@@ -158,6 +158,10 @@
     "LoginRequiredMsg": "账号已退出，请重新登录",
     "ReLogin": "重新登录"
   },
+  "accounts": {
+    "AccountType": "账号类型",
+    "AccountNamespace": "命名空间"
+  },
   "common": {
     "Action": "动作",
     "RequestTickets": "申请工单",
@@ -432,6 +436,9 @@
     "AdminUserList": "管理用户",
     "AdminUserUpdate": "更新管理用户",
     "Applications": "应用管理",
+    "Accounts": "账号管理",
+    "AccountList": "账号列表",
+    "AccountTypeList": "账号类型",
     "AssetCreate": "创建资产",
     "AssetDetail": "资产详情",
     "AssetList": "资产列表",

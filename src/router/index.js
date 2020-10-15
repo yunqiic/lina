@@ -36,6 +36,7 @@ import OpsRoutes from './ops'
 import TicketsRoutes from './tickets'
 import AuditsRoutes from './audits'
 import commonRoutes from './common'
+import AccountsRoutes from './accounts'
 
 /**
  * constantRoutes
@@ -108,6 +109,15 @@ export const allRoleRoutes = [
     alwaysShow: true,
     meta: { title: i18n.t('route.Applications'), icon: 'th' },
     children: ApplicationsRoute
+  },
+  {
+    path: '/accounts/',
+    component: Layout,
+    redirect: '/accounts/accounts/',
+    name: 'accounts',
+    alwaysShow: true,
+    meta: { title: i18n.t('route.Accounts'), icon: 'th' },
+    children: AccountsRoutes
   },
   {
     path: '/perms/',
