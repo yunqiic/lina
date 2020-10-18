@@ -12,12 +12,30 @@ export default {
     return {
       fields: [
         [this.$t('common.Basic'), ['name', 'username', 'address', 'type', 'namespace']],
-        [this.$t('accounts.secret'), ['secret', 'secret_type']],
+        [this.$t('accounts.Secret'), ['secret', 'secret_type']],
         [this.$t('common.Other'), ['extra_props', 'comment']]
       ],
       fieldsMeta: {
+        type: {
+          el: {
+            multiple: false,
+            ajax: {
+              url: '/api/v1/accounts/account-types/'
+            },
+            value: []
+          }
+        },
+        namespace: {
+          el: {
+            multiple: false,
+            ajax: {
+              url: '/api/v1/namespaces/namespaces/'
+            },
+            value: []
+          }
+        }
       },
-      url: '/api/v1/accounts/accounts/?account_type=1a91de68-3662-4856-888c-04c95435cf6f'
+      url: '/api/v1/accounts/accounts/'
     }
   },
   computed: {

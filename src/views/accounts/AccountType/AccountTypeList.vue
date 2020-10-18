@@ -13,14 +13,23 @@ export default {
     return {
       tableConfig: {
         url: '/api/v1/accounts/account-types/',
-        columns: ['name', 'category', 'protocol', 'comment', 'actions'],
+        columns: ['name', 'category', 'protocol', 'actions'],
         columnsMeta: {
-
-        },
-        detailRoute: 'UserGroupDetail'
+          actions: {
+            formatterArgs: {
+              canUpdate: function(row, cellValue) {
+                return row.created_by !== 'init_db'
+              },
+              canDelete: function(row, cellValue) {
+                return row.created_by !== 'init_db'
+              }
+            }
+          }
+        }
       },
       headerActions: {
-        createRoute: 'UserGroupCreate'
+        hasCreate: true,
+        hasBulkDelete: false
       }
     }
   }
