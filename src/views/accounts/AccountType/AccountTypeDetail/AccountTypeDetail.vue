@@ -36,12 +36,21 @@ export default {
           value: this.object.category
         },
         {
+          key: this.$t('accounts.Secret_type'),
+          value: this.object.secret_type
+        },
+        {
           key: this.$t('common.Protocol'),
           value: this.object.protocol
         },
         {
           key: this.$t('accounts.Prop_fields'),
-          value: JSON.stringify(this.object.prop_fields_info)
+          // value: JSON.stringify(this.object.prop_fields_info)
+          value: this.object.prop_fields_info,
+          formatter: function(item, val) {
+            const data = val.map(v => v.name).join(', ')
+            return <span>{ data }</span>
+          }
         },
         {
           key: this.$t('common.dateCreated'),

@@ -15,7 +15,7 @@ import { toSafeLocalDateStr } from '@/utils/common'
 import RelationCard from '@/components/RelationCard'
 
 export default {
-  name: 'NamespaceDetail',
+  name: 'RoleDetail',
   components: {
     DetailCard,
     RelationCard
@@ -29,12 +29,12 @@ export default {
   data() {
     return {
       relationConfig: {
-        icon: 'fa-user',
-        title: this.$t('common.Members'),
+        icon: 'fa-lock',
+        title: this.$t('common.Permissions'),
         objectsAjax: {
-          url: '/api/v1/users/users/?fields_size=mini&order=name',
+          url: '/api/v1/rbac/permissions/',
           transformOption: (item) => {
-            return { label: item.name + '(' + item.username + ')', value: item.id }
+            return { label: '123', value: item.id }
           }
         },
         hasObjectsId: this.object.users,
@@ -45,7 +45,7 @@ export default {
           return this.$axios.delete(relationUrl)
         },
         performAdd: (items) => {
-          const relationUrl = `/api/v1/rbac/role-bindings/`
+          const relationUrl = `/api/v1/users/users-groups-relations/`
           const objectId = this.object.id
           const data = items.map(v => {
             return {
@@ -67,6 +67,10 @@ export default {
         {
           key: this.$t('common.Name'),
           value: this.object.name
+        },
+        {
+          key: this.$t('common.Type'),
+          value: this.object.type
         },
         {
           key: this.$t('common.dateCreated'),

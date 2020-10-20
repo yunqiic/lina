@@ -12,7 +12,7 @@ export default [
         path: '',
         component: () => import('@/views/accounts/Account/AccountList'), // Parent router-view
         name: 'AccountList',
-        meta: { title: i18n.t('route.AccountList') }
+        meta: { title: i18n.t('route.AccountList'), activeMenu: '/accounts/accounts' }
       },
       {
         path: 'create',
@@ -47,7 +47,7 @@ export default [
         path: '',
         component: () => import('@/views/accounts/AccountType/AccountTypeList'), // Parent router-view
         name: 'AccountTypeList',
-        meta: { title: i18n.t('route.AccountTypeList') }
+        meta: { title: i18n.t('route.AccountTypeList'), activeMenu: '/accounts/account-types' }
       },
       {
         path: 'create',
@@ -82,7 +82,7 @@ export default [
         path: '',
         component: () => import('@/views/accounts/Namespace/NamespaceList'), // Parent router-view
         name: 'NamespaceList',
-        meta: { title: i18n.t('route.Namespace') }
+        meta: { title: i18n.t('route.Namespace'), activeMenu: '/accounts/namespaces' }
       },
       {
         path: 'create',
@@ -104,6 +104,41 @@ export default [
         name: 'NamespaceDetail',
         hidden: true,
         meta: { title: i18n.t('route.NamespaceDetail'), activeMenu: '/accounts/namespaces' }
+      }
+    ]
+  },
+  {
+    path: 'roles',
+    component: empty, // Parent router-view
+    redirect: '',
+    meta: { title: i18n.t('route.Roles') },
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/accounts/Role/RoleList'), // Parent router-view
+        name: 'RoleList',
+        meta: { title: i18n.t('route.Role'), activeMenu: '/accounts/roles' }
+      },
+      {
+        path: 'create',
+        component: () => import('@/views/accounts/Role/RoleCreateUpdate'), // Parent router-view
+        name: 'RoleCreate',
+        hidden: true,
+        meta: { title: i18n.t('route.RoleCreate'), activeMenu: '/accounts/roles', action: 'create' }
+      },
+      {
+        path: ':id/update',
+        component: () => import('@/views/accounts/Role/RoleCreateUpdate'), // Parent router-view
+        name: 'RoleUpdate',
+        hidden: true,
+        meta: { title: i18n.t('route.RoleUpdate'), activeMenu: '/accounts/roles', action: 'update' }
+      },
+      {
+        path: ':id',
+        component: () => import('@/views/accounts/Role/RoleDetail/index'), // Parent router-view
+        name: 'RoleDetail',
+        hidden: true,
+        meta: { title: i18n.t('route.RoleDetail'), activeMenu: '/accounts/roles' }
       }
     ]
   }

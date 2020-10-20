@@ -12,7 +12,7 @@ export default {
     return {
       fields: [
         [this.$t('common.Basic'), ['name', 'username', 'address', 'type', 'namespace']],
-        [this.$t('accounts.Secret'), ['secret', 'secret_type']],
+        [this.$t('accounts.Secret'), ['secret']],
         [this.$t('common.Other'), ['extra_props', 'comment']]
       ],
       fieldsMeta: {

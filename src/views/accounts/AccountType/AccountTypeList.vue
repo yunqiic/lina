@@ -13,7 +13,7 @@ export default {
     return {
       tableConfig: {
         url: '/api/v1/accounts/account-types/',
-        columns: ['name', 'category', 'protocol', 'actions'],
+        columns: ['name', 'category', 'secret_type', 'protocol', 'actions'],
         columnsMeta: {
           actions: {
             formatterArgs: {

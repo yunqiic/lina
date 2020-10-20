@@ -116,7 +116,7 @@ export const allRoleRoutes = [
     redirect: '/accounts/accounts/',
     name: 'accounts',
     alwaysShow: true,
-    meta: { title: i18n.t('route.Accounts'), icon: 'th' },
+    meta: { title: i18n.t('route.Accounts'), icon: 'sign-language' },
     children: AccountsRoutes
   },
   {
