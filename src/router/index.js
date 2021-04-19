@@ -37,6 +37,7 @@ import TicketsRoutes from './tickets'
 import AuditsRoutes from './audits'
 import commonRoutes from './common'
 import aclRoutes from './acl'
+import AccountsRoute from './accounts'
 
 /**
  * constantRoutes
@@ -81,6 +82,17 @@ export const allRoleRoutes = [
         meta: { title: i18n.t('route.Dashboard'), icon: 'dashboard', permissions: [rolec.PERM_AUDIT] }
       }
     ]
+  },
+  {
+    path: '/accounts',
+    component: Layout,
+    redirect: '/accounts/accounts/',
+    name: 'Accounts',
+    meta: {
+      title: i18n.t('route.Accounts'),
+      icon: 'users'
+    },
+    children: AccountsRoute
   },
   {
     path: '/users',
