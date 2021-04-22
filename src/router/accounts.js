@@ -19,7 +19,7 @@ export default [
       {
         path: 'create',
         name: 'AccountCreate',
-        component: () => import('@/views/accounts/account/AccountCreateUpdate'),
+        component: () => import('@/views/accounts/account/AccountCreate'),
         meta: { title: i18n.t('route.AccountCreate'), activeMenu: '/accounts/account' },
         hidden: true
       },
@@ -33,7 +33,7 @@ export default [
       {
         path: ':id/update',
         name: 'AccountUpdate',
-        component: () => import('@/views/accounts/account/AccountCreateUpdate'),
+        component: () => import('@/views/accounts/account/AccountCreate'),
         meta: { title: i18n.t('route.AccountUpdate'), activeMenu: '/accounts/account' },
         hidden: true
       }
