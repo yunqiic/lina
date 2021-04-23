@@ -11,19 +11,15 @@ export default {
     GenericStepCreatePage
   },
   data() {
-    const vm = this
     return {
       steps: [
         {
-          key: Math.random(),
+          route: '',
           tab: {
             title: '账号类别',
             icon: 'ti-user',
             beforeChange() {
               console.log('beforeChange ->>> step1', this)
-              vm.steps[1].form.fields = ['username']
-              vm.steps[1].key++
-              console.log(vm.steps[1].key)
               return true
             }
           },
@@ -38,7 +34,6 @@ export default {
           }
         },
         {
-          key: Math.random(),
           tab: {
             title: '账号类型',
             icon: 'ti-check',
@@ -58,7 +53,6 @@ export default {
           }
         },
         {
-          key: Math.random(),
           tab: {
             title: '账号信息',
             icon: 'ti-settings',

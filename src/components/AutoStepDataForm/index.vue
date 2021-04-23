@@ -1,5 +1,5 @@
 <template>
-  <StepDataForm ref="stepDataForm" :steps="iSteps" />
+  <StepDataForm ref="stepDataForm" v-loading="loading" :total-fields="totalFields" :groups="groups" :form="iForm" v-bind="$attrs" v-on="$listeners" />
 </template>
 
 <script>
@@ -11,41 +11,57 @@ export default {
     StepDataForm
   },
   props: {
-    steps: {
+    url: {
+      type: String,
+      required: true
+    },
+    method: {
+      type: String,
+      default: 'post'
+    },
+    fields: {
       type: Array,
-      default: () => ([])
+      default: () => {
+        return []
+      }
+    },
+    form: {
+      type: Object,
+      default: () => ({})
+    },
+    fieldsMeta: {
+      type: Object,
+      default: () => ({})
     }
   },
   data() {
     return {
+      remoteMeta: {},
+      totalFields: [],
       loading: true,
-      iSteps: this.steps
+      groups: [],
+      iForm: this.form
     }
   },
   mounted() {
-    this.optionUrlMetaAndGenerateStepsColumns()
+    this.optionUrlMetaAndGenerateStepFormColumns()
   },
   methods: {
-    optionUrlMetaAndGenerateStepsColumns() {
-      for (const step of this.iSteps) {
-        this.optionUrlMetaAndGenerateStepColumns(step)
-      }
-    },
-    optionUrlMetaAndGenerateStepColumns(step) {
-      this.$store.dispatch('common/getUrlMeta', { url: step.form.url }).then(data => {
-        step.form.remoteMeta = data.actions[step.form.method.toUpperCase()] || {}
+    optionUrlMetaAndGenerateStepFormColumns() {
+      this.$store.dispatch('common/getUrlMeta', { url: this.url }).then(data => {
+        this.remoteMeta = data.actions[this.method.toUpperCase()] || {}
         const generator = new FormFieldGenerator()
-        step.form.totalFields = generator.generateFields(step.form.fields, step.form.fieldsMeta, step.form.remoteMeta)
-        step.form.groups = generator.groups
-        this.cleanStepFormValue(step)
+        this.totalFields = generator.generateFields(this.fields, this.fieldsMeta, this.remoteMeta)
+        this.groups = generator.groups
+        this.cleanStepFormValue()
       }).catch(err => {
         this.$log.error(err)
       }).finally(() => {
-        step.form.loading = false
+        this.loading = false
       })
     },
-    cleanStepFormValue(step) {
-      this._cleanStepFormValue(step.form.form, step.form.remoteMeta)
+    cleanStepFormValue() {
+      this._cleanStepFormValue(this.iForm, this.remoteMeta)
     },
     _cleanStepFormValue(form, remoteMeta) {
       for (const [k, v] of Object.entries(remoteMeta)) {

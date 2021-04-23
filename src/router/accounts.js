@@ -12,27 +12,27 @@ export default [
     children: [
       {
         path: '',
-        name: 'AccountList',
+        name: 'PAMAccountList',
         component: () => import('@/views/accounts/account/AccountList'),
         meta: { title: i18n.t('route.AccountList'), activeMenu: '/accounts/account' }
       },
       {
         path: 'create',
-        name: 'AccountCreate',
-        component: () => import('@/views/accounts/account/AccountCreate'),
+        name: 'PAMAccountCreate',
+        component: () => import('@/views/accounts/account/AccountCreate/index'),
         meta: { title: i18n.t('route.AccountCreate'), activeMenu: '/accounts/account' },
         hidden: true
       },
       {
         path: ':id',
-        name: 'AccountDetail',
+        name: 'PAMAccountDetail',
         component: () => import('@/views/accounts/account/AccountDetail'),
         meta: { title: i18n.t('route.AccountDetail'), activeMenu: '/accounts/account' },
         hidden: true
       },
       {
         path: ':id/update',
-        name: 'AccountUpdate',
+        name: 'PAMAccountUpdate',
         component: () => import('@/views/accounts/account/AccountCreate'),
         meta: { title: i18n.t('route.AccountUpdate'), activeMenu: '/accounts/account' },
         hidden: true
