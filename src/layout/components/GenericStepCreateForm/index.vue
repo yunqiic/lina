@@ -1,5 +1,5 @@
 <template>
-  <AutoStepDataForm />
+  <AutoStepDataForm v-bind="$attrs" v-on="$listeners" />
 </template>
 
 <script>
@@ -10,10 +10,6 @@ export default {
     AutoStepDataForm
   },
   props: {
-    url: {
-      type: String,
-      default: ''
-    }
   }
 }
 </script>

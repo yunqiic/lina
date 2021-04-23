@@ -52,11 +52,14 @@ Vue.component('echarts', ECharts)
 
 import service from '@/utils/request'
 
-import VueFormGenerator from 'vue-form-generator'
-Vue.use(VueFormGenerator)
+// import VueFormGenerator from 'vue-form-generator'
+// Vue.use(VueFormGenerator)
 
 import VueFormWizard from 'vue-form-wizard'
 Vue.use(VueFormWizard)
+
+// import VueStepWizard from 'vue-step-wizard'
+// Vue.use(VueStepWizard)
 
 // lodash
 // import _ from 'lodash'
