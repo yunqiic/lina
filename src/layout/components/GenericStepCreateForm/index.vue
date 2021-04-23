@@ -1,5 +1,5 @@
 <template>
-  <AutoDataForm ref="form" :show-buttons="false" :url="iUrl" v-bind="$attrs" v-on="$listeners" />
+  <AutoDataForm ref="form" :show-buttons="false" :url="url" v-bind="$attrs" v-on="$listeners" />
 </template>
 
 <script>
@@ -16,13 +16,10 @@ export default {
     }
   },
   computed: {
-    iUrl() {
-      return this.getUrl()
-    }
   },
   methods: {
-    getUrl() {
-      return this.url
+    getFormValue() {
+      return this.$refs.form.$refs.dataForm.$refs.form.getFormValue()
     }
   }
 }
