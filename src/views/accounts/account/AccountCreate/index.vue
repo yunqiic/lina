@@ -48,7 +48,9 @@ export default {
             icon: '',
             component: Step2,
             beforeChange() {
-              const accountType = 'account-type-2'
+              const form = this.$children[0].getFormValue()
+              console.log('step2 form: ', form.type)
+              const accountType = form.type
               const query = Object.assign({}, vm.$route.query, { account_type: accountType })
               vm.$router.replace({ query })
               vm.accountType = accountType

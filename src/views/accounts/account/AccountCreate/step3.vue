@@ -39,7 +39,7 @@ export default {
   methods: {
     getUrl() {
       this.$log.debug('account_type: ', this.$route)
-      return `/api/v1/accounts/accounts/?account_type=${this.$route.query.account_type}`
+      return `/api/v1/accounts/accounts/?account_type=${this.$route.query.account_type || ''}`
     },
     getFieldsMeta() {
       this.$store.dispatch('common/getUrlMeta', { url: this.iUrl }).then(data => {
