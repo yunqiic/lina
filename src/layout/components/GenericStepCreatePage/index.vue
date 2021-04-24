@@ -2,7 +2,7 @@
   <Page v-bind="$attrs">
     <IBox>
       <form-wizard color="#1ab394" error-color="red" shape="tab" class="form-wizard" @on-complete="onComplete" @on-change="onChange">
-        <tab-content v-for="step in steps" :key="step.id" :title="step.title" :icon="step.icon" :before-change="step.beforeChange ? step.beforeChange : defaultBeforeChange">
+        <tab-content v-for="step in steps" :key="step.id" :title="step.title" :icon="step.icon" :before-change="step.beforeChange || beforeChange">
           <component :is="step.component" :ref="step.name" :key="step.key" />
         </tab-content>
       </form-wizard>
@@ -11,9 +11,10 @@
 </template>
 
 <script>
-import IBox from '@/components/IBox'
 import 'vue-form-wizard/dist/vue-form-wizard.min.css'
+import IBox from '@/components/IBox'
 import Page from '@/layout/components/Page'
+
 export default {
   name: 'GenericStepCreatePage',
   components: {
@@ -24,10 +25,6 @@ export default {
       type: Array,
       required: true
     },
-    activeStep: {
-      type: String,
-      default: ''
-    },
     onComplete: {
       type: Function,
       default: () => {
@@ -37,17 +34,15 @@ export default {
     onChange: {
       type: Function,
       default: (prevIndex, nextIndex) => {
-        console.log('On change:', prevIndex, nextIndex)
+        this.$log.debug('On change:', prevIndex, nextIndex)
       }
     }
   },
   methods: {
-    defaultBeforeChange() {
-      console.log(this)
+    beforeChange() {
       return true
     }
   }
-
 }
 </script>
 

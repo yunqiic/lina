@@ -3,6 +3,7 @@
 </template>
 <script>
 import GenericStepCreateForm from '@/layout/components/GenericStepCreateForm'
+import { Required } from '@/components/DataForm/rules'
 
 export default {
   name: 'Step2',
@@ -18,6 +19,7 @@ export default {
       fields: ['type'],
       fieldsMeta: {
         type: {
+          rules: [Required],
           el: {
             multiple: false,
             ajax: {
@@ -28,9 +30,17 @@ export default {
       }
     }
   },
+  computed: {
+    form() {
+      return this.$refs.genericStepCreateForm
+    }
+  },
   methods: {
     getFormValue() {
-      return this.$refs.genericStepCreateForm.getFormValue()
+      return this.form.getFormValue()
+    },
+    validate() {
+      return this.form.validate()
     }
   }
 }

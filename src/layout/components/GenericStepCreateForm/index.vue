@@ -16,10 +16,16 @@ export default {
     }
   },
   computed: {
+    form() {
+      return this.$refs.form.$refs.dataForm.$refs.form
+    }
   },
   methods: {
     getFormValue() {
-      return this.$refs.form.$refs.dataForm.$refs.form.getFormValue()
+      return this.form.getFormValue()
+    },
+    validate() {
+      return this.form.validate()
     }
   }
 }

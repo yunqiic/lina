@@ -16,8 +16,7 @@ export default {
       method: 'post',
       url: '/api/v1/accounts/account-types/',
       fields: ['category'],
-      fieldsMeta: {
-      }
+      fieldsMeta: {}
     }
   },
   mounted() {
@@ -25,10 +24,6 @@ export default {
   methods: {
     getFormValue() {
       return this.$refs.genericStepCreateForm.getFormValue()
-    },
-    beforeChange() {
-      console.log('>>>> beforeChang of Step1')
-      return true
     }
   }
 }
