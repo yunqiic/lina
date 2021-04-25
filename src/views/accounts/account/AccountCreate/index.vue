@@ -29,7 +29,7 @@ export default {
           {
             key: 0,
             name: 'step1',
-            title: '账号种类',
+            title: this.$t('accounts.AccountCategory'),
             icon: '',
             component: Step1,
             async beforeChange() {
@@ -45,7 +45,7 @@ export default {
           {
             key: 1,
             name: 'step2',
-            title: '账号类型',
+            title: this.$t('accounts.AccountType'),
             icon: '',
             component: Step2,
             async beforeChange() {
@@ -64,7 +64,7 @@ export default {
           {
             key: 2,
             name: 'step3',
-            title: '账号信息',
+            title: this.$t('accounts.AccountInfo'),
             icon: '',
             component: Step3,
             async beforeChange() {

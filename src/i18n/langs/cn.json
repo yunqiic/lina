@@ -1,5 +1,10 @@
 {
   "": "",
+  "accounts": {
+    "AccountCategory": "账号种类",
+    "AccountType": "账号类型",
+    "AccountInfo": "账号信息"
+  },
   "acl": {
     "name": "名称",
     "username": "用户名",
@@ -213,6 +218,7 @@
     "ReLogin": "重新登录"
   },
   "common": {
+    "Addition": "附加",
     "Action": "动作",
     "RequestTickets": "申请工单",
     "Actions": "操作",

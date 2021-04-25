@@ -1,5 +1,10 @@
 {
   "": "",
+  "accounts": {
+    "AccountCategory": "Account category",
+    "AccountType": "Account type",
+    "AccountInfo": "Account info"
+  },
   "acl": {
     "name": "Name",
     "username": "Username",
@@ -211,6 +216,7 @@
     "ReLogin": "Re-Login"
   },
   "common": {
+    "Addition": "Addition",
     "Nothing": "Nothing",
     "Action": "Action",
     "CustomCol":"Custom table col",
