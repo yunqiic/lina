@@ -19,12 +19,14 @@ export default {
       fieldsMeta: {}
     }
   },
+  computed: {
+    form() {
+      return this.$refs.genericStepCreateForm
+    }
+  },
   mounted() {
   },
   methods: {
-    getFormValue() {
-      return this.$refs.genericStepCreateForm.getFormValue()
-    }
   }
 }
 </script>

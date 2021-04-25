@@ -1,5 +1,5 @@
 <template>
-  <GenericStepCreateForm ref="genericStepCreateForm" :url="url" :method="method" :icon="icon" :fields="fields" :fields-meta="fieldsMeta" />
+  <GenericStepCreateForm ref="genericStepCreateForm" :url="url" :method="method" :fields="fields" :fields-meta="fieldsMeta" />
 </template>
 <script>
 import GenericStepCreateForm from '@/layout/components/GenericStepCreateForm'
@@ -36,12 +36,6 @@ export default {
     }
   },
   methods: {
-    getFormValue() {
-      return this.form.getFormValue()
-    },
-    validate() {
-      return this.form.validate()
-    }
   }
 }
 </script>

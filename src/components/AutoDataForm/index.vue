@@ -69,16 +69,25 @@ export default {
       this.$log.debug('Total fields: ', this.totalFields)
     },
     _cleanFormValue(form, remoteMeta) {
+      if (remoteMeta === undefined) {
+        return
+      }
       for (const [k, v] of Object.entries(remoteMeta)) {
+        // console.log('>>> form, k, v: ', form, k, v)
+        // 已经设置过 k 的值
+        if (form[k] !== undefined) {
+          continue
+        }
+        // 如果是 nested object 对象
+        if (v.type === 'nested object') {
+          if (typeof form[k] !== 'object') {
+            // 设置初始值
+            form[k] = {}
+          }
+          this._cleanFormValue(form[k], v.children)
+        }
         if (v.default === undefined) {
           continue
-        }
-        const valueSet = form[k]
-        if (valueSet !== undefined) {
-          continue
-        }
-        if (v.type === 'nested object' && typeof valueSet === 'object') {
-          this._cleanFormValue(valueSet, v.children)
         }
         form[k] = v.default
       }

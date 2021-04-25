@@ -21,9 +21,8 @@ export default {
   data() {
     const vm = this
     return {
-      form: {
-      },
       config: {
+        formValue: {},
         category: '',
         accountType: '',
         steps: [
@@ -33,11 +32,13 @@ export default {
             title: '账号种类',
             icon: '',
             component: Step1,
-            beforeChange() {
-              const form = this.$children[0].getFormValue()
-              const category = form.category
+            async beforeChange() {
+              const elForm = this.$children[0].form.elForm
+              const formValue = elForm.getFormValue()
+              const category = formValue.category
               const query = Object.assign({}, vm.$route.query, { category: category })
-              vm.$router.replace({ query })
+              console.log('query: ', query)
+              await vm.$router.replace({ query })
               return true
             }
           },
@@ -48,15 +49,15 @@ export default {
             icon: '',
             component: Step2,
             async beforeChange() {
-              const form = this.$children[0]
-              if (!await form.validate()) {
+              const elForm = this.$children[0].form.elForm
+              if (!await elForm.validate()) {
                 return false
               }
-              const formValue = form.getFormValue()
-              console.log('step2 form: ', formValue.type)
+              const formValue = elForm.getFormValue()
               const accountType = formValue.type
               const query = Object.assign({}, vm.$route.query, { account_type: accountType })
-              vm.$router.replace({ query })
+              await vm.$router.replace({ query })
+              Object.assign(vm.config.formValue, formValue)
               return true
             }
           },
@@ -65,15 +66,26 @@ export default {
             name: 'step3',
             title: '账号信息',
             icon: '',
-            component: Step3
+            component: Step3,
+            async beforeChange() {
+              const form = this.$children[0].form
+              const elForm = form.elForm
+              const dataForm = form.dataForm
+              const formValue = elForm.getFormValue()
+              await Object.assign(vm.config.formValue, formValue)
+              dataForm.submitForm('form')
+              return true
+            }
           }
         ],
         onChange(prevIndex, nextIndex) {
+          if (nextIndex === -1) {
+            return
+          }
           vm.$log.debug(prevIndex, nextIndex)
           const nextStep = vm.config.steps[nextIndex]
           const query = vm.$route.query
           if (nextStep.name === 'step2' && query.category !== vm.category) {
-            vm.$log.debug('Change Key')
             vm.category = query.category
             nextStep.key = Math.random()
           } else if (nextStep.name === 'step3' && query.account_type !== vm.accountType) {
@@ -83,6 +95,9 @@ export default {
         }
       }
     }
+  },
+  methods: {
+
   }
 }
 </script>

@@ -3,7 +3,7 @@
     <IBox>
       <form-wizard color="#1ab394" error-color="red" shape="tab" class="form-wizard" @on-complete="onComplete" @on-change="onChange">
         <tab-content v-for="step in steps" :key="step.id" :title="step.title" :icon="step.icon" :before-change="step.beforeChange || beforeChange">
-          <component :is="step.component" :ref="step.name" :key="step.key" />
+          <component :is="step.component" :ref="step.name" :key="step.key" v-bind="$attrs" />
         </tab-content>
       </form-wizard>
     </IBox>
@@ -28,7 +28,7 @@ export default {
     onComplete: {
       type: Function,
       default: () => {
-        alert('On Complete yeah!')
+        this.$log.debug('On Complete yeah!')
       }
     },
     onChange: {
