@@ -1,5 +1,5 @@
 <template>
-  <GenericStepCreateForm ref="genericStepCreateForm" :url="url" :method="method" :fields="fields" :fields-meta="fieldsMeta" />
+  <GenericStepCreateForm ref="genericStepCreateForm" :url="url" :method="method" :fields="fields" :fields-meta="fieldsMeta" class="generic-step-create-form" />
 </template>
 <script>
 import GenericStepCreateForm from '@/layout/components/GenericStepCreateForm'
@@ -23,14 +23,12 @@ export default {
     form() {
       return this.$refs.genericStepCreateForm
     }
-  },
-  mounted() {
-  },
-  methods: {
   }
 }
 </script>
 
-<style scoped>
-
+<style lang="less" scoped>
+.generic-step-create-form ::v-deep .el-select {
+  width: 100%;
+}
 </style>
