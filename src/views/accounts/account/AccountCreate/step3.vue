@@ -20,8 +20,7 @@ export default {
     return {
       method: 'post',
       fields: [
-        [this.$t('common.Basic'), ['name', 'safe', 'is_privileged']],
-        [this.$t('common.Auth'), ['address', 'username', 'secret']],
+        [this.$t('common.Basic'), ['safe', 'name', 'address', 'username', 'secret', 'is_privileged']],
         [this.$t('common.Addition'), ['attrs']],
         [this.$t('common.Other'), ['comment']]
       ],

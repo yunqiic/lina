@@ -50,4 +50,8 @@ export default {
 .form-wizard ::v-deep .wizard-header {
   display: none
 }
+.form-wizard ::v-deep .wizard-card-footer {
+  width: 15%;
+  margin-left: 85%;
+}
 </style>
