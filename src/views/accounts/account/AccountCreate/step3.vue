@@ -20,10 +20,10 @@ export default {
     return {
       method: 'post',
       fields: [
-        [this.$t('common.Basic'), ['name', 'safe']],
+        [this.$t('common.Basic'), ['name', 'safe', 'is_privileged']],
         [this.$t('common.Auth'), ['address', 'username', 'secret']],
-        [this.$t('common.Attrs'), ['attrs']],
-        [this.$t('common.Other'), ['is_privileged', 'comment']]
+        [this.$t('common.Addition'), ['attrs']],
+        [this.$t('common.Other'), ['comment']]
       ],
       fieldsMeta: {
         safe: {
@@ -63,7 +63,18 @@ export default {
       this.$store.dispatch('common/getUrlMeta', { url: this.iUrl }).then(data => {
         const remoteMeta = data.actions[this.method.toUpperCase()] || {}
         const attrs = remoteMeta.attrs.children || {}
-        this.fieldsMeta.attrs.fields = Object.keys(attrs)
+        const attrsMetaFields = []
+        // eslint-disable-next-line no-unused-vars
+        for (const fieldName in attrs) {
+          const fieldAttr = attrs[fieldName]
+          if (!fieldAttr.read_only) {
+            attrsMetaFields.push(fieldName)
+          }
+        }
+        this.fieldsMeta.attrs.fields = attrsMetaFields
+        if (attrsMetaFields.length === 0) {
+          this.fields.splice(2, 1)
+        }
       }).catch(err => {
         this.$log.error(err)
       })
@@ -91,6 +102,7 @@ export default {
       const response = error.response
       const data = response.data
       if (response.status === 400) {
+        // eslint-disable-next-line no-unused-vars
         for (const key of Object.keys(data)) {
           let value = data[key]
           if (value instanceof Array) {
