@@ -28,7 +28,7 @@ export default {
     onComplete: {
       type: Function,
       default: () => {
-        this.$log.debug('On Complete yeah!')
+        console.log('On Complete yeah!')
       }
     },
     onChange: {

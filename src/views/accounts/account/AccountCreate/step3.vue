@@ -1,5 +1,5 @@
 <template>
-  <GenericStepCreateForm ref="genericStepCreateForm" :url="iUrl" :method="method" :fields="fields" :fields-meta="iFieldsMeta" :handle-submit="handleSubmit" />
+  <GenericStepCreateForm ref="genericStepCreateForm" v-loading="loading" :url="iUrl" :method="method" :fields="fields" :fields-meta="iFieldsMeta" :handle-submit="handleSubmit" />
 </template>
 <script>
 import GenericStepCreateForm from '@/layout/components/GenericStepCreateForm'
@@ -19,6 +19,7 @@ export default {
   data() {
     return {
       method: 'post',
+      loading: true,
       fields: [
         [this.$t('common.Basic'), ['safe', 'name', 'address', 'username', 'secret', 'is_privileged']],
         [this.$t('common.Addition'), ['attrs']],
@@ -59,6 +60,7 @@ export default {
       return `/api/v1/accounts/accounts/?account_type=${this.$route.query.account_type || ''}`
     },
     getFieldsMeta() {
+      const vm = this
       this.$store.dispatch('common/getUrlMeta', { url: this.iUrl }).then(data => {
         const remoteMeta = data.actions[this.method.toUpperCase()] || {}
         const attrs = remoteMeta.attrs.children || {}
@@ -72,10 +74,12 @@ export default {
         }
         this.fieldsMeta.attrs.fields = attrsMetaFields
         if (attrsMetaFields.length === 0) {
-          this.fields.splice(2, 1)
+          this.fields.splice(1, 1)
         }
       }).catch(err => {
         this.$log.error(err)
+      }).finally(() => {
+        vm.loading = false
       })
       return this.fieldsMeta
     },

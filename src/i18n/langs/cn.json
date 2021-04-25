@@ -523,6 +523,11 @@
   },
   "route": {
     "": "",
+    "PAMAccount": "特权账号",
+    "PAMAccountCreate": "创建账号",
+    "PAMAccountList": "账号列表",
+    "PAMAccountUpdate": "更新账号",
+    "PAMAccountDetail": "账号详情",
     "Ticket":"工单",
     "AdminUserCreate": "创建管理用户",
     "AdminUserDetail": "管理用户详情",

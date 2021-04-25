@@ -89,7 +89,7 @@ export const allRoleRoutes = [
     redirect: '/accounts/accounts/',
     name: 'Accounts',
     meta: {
-      title: i18n.t('route.Accounts'),
+      title: i18n.t('route.PAMAccount'),
       icon: 'users'
     },
     children: AccountsRoute

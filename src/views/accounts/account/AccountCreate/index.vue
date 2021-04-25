@@ -82,7 +82,6 @@ export default {
           if (nextIndex === -1) {
             return
           }
-          vm.$log.debug(prevIndex, nextIndex)
           const nextStep = vm.config.steps[nextIndex]
           const query = vm.$route.query
           if (nextStep.name === 'step2' && query.category !== vm.category) {

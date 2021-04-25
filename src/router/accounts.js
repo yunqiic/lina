@@ -6,7 +6,7 @@ export default [
     component: empty,
     redirect: '',
     meta: {
-      title: i18n.t('route.AccountList'),
+      title: i18n.t('route.PAMAccountList'),
       licenseRequired: false
     },
     children: [
@@ -14,27 +14,27 @@ export default [
         path: '',
         name: 'PAMAccountList',
         component: () => import('@/views/accounts/account/AccountList'),
-        meta: { title: i18n.t('route.AccountList'), activeMenu: '/accounts/account' }
+        meta: { title: i18n.t('route.PAMAccountList'), activeMenu: '/accounts/accounts' }
       },
       {
         path: 'create',
         name: 'PAMAccountCreate',
         component: () => import('@/views/accounts/account/AccountCreate/index'),
-        meta: { title: i18n.t('route.AccountCreate'), activeMenu: '/accounts/account' },
+        meta: { title: i18n.t('route.PAMAccountCreate'), activeMenu: '/accounts/accounts' },
         hidden: true
       },
       {
         path: ':id',
         name: 'PAMAccountDetail',
         component: () => import('@/views/accounts/account/AccountDetail'),
-        meta: { title: i18n.t('route.AccountDetail'), activeMenu: '/accounts/account' },
+        meta: { title: i18n.t('route.PAMAccountDetail'), activeMenu: '/accounts/accounts' },
         hidden: true
       },
       {
         path: ':id/update',
         name: 'PAMAccountUpdate',
         component: () => import('@/views/accounts/account/AccountCreate/index'),
-        meta: { title: i18n.t('route.AccountUpdate'), activeMenu: '/accounts/account' },
+        meta: { title: i18n.t('route.PAMAccountUpdate'), activeMenu: '/accounts/accounts' },
         hidden: true
       }
     ]

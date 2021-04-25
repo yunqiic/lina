@@ -521,6 +521,11 @@
   },
   "route": {
     "": "",
+    "PAMAccount": "Accounts",
+    "PAMAccountCreate": "Account create",
+    "PAMAccountList": "Accounts",
+    "PAMAccountUpdate": "Account update",
+    "PAMAccountDetail": "Account detail",
     "Ticket": "Tickets",
     "AdminUserCreate": "Admin user create",
     "AdminUserDetail": "Admin user detail",
