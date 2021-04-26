@@ -1,9 +1,5 @@
 <template>
-  <GenericStepCreatePage v-bind="config" v-on="$listeners">
-    <Step1 v-if="false" />
-    <Step2 v-if="false" />
-    <Step3 v-if="false" />
-  </GenericStepCreatePage>
+  <GenericStepCreatePage v-bind="config" v-on="$listeners" />
 </template>
 
 <script>
@@ -16,6 +12,7 @@ export default {
   name: 'AccountCreate',
   components: {
     GenericStepCreatePage,
+    // eslint-disable-next-line vue/no-unused-components
     Step1, Step2, Step3
   },
   data() {

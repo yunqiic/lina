@@ -3,7 +3,16 @@
   "accounts": {
     "AccountCategory": "Account category",
     "AccountType": "Account type",
-    "AccountInfo": "Account info"
+    "AccountInfo": "Account info",
+    "AccountDetail": "Account detail",
+    "Name": "Name",
+    "Type": "Type",
+    "Username": "Username",
+    "Address": "Address",
+    "Safe": "Safe",
+    "DateCreated": "Date created",
+    "DateUpdated": "Date updated",
+    "Comment": "Comment"
   },
   "acl": {
     "name": "Name",

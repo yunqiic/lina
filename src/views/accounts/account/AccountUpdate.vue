@@ -59,6 +59,7 @@ export default {
       return `${url}?account_type=${this.$route.query.type}`
     },
     getFieldsMeta() {
+      // 与创建页面重复
       this.$store.dispatch('common/getUrlMeta', { url: this.getUrl() }).then(data => {
         const remoteMeta = data.actions[this.method.toUpperCase()] || {}
         const attrs = remoteMeta.attrs.children || {}

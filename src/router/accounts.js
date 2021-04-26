@@ -26,7 +26,7 @@ export default [
       {
         path: ':id',
         name: 'PAMAccountDetail',
-        component: () => import('@/views/accounts/account/AccountDetail'),
+        component: () => import('@/views/accounts/account/AccountDetail/index'),
         meta: { title: i18n.t('route.PAMAccountDetail'), activeMenu: '/accounts/accounts' },
         hidden: true
       },

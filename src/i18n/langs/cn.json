@@ -3,7 +3,16 @@
   "accounts": {
     "AccountCategory": "账号种类",
     "AccountType": "账号类型",
-    "AccountInfo": "账号信息"
+    "AccountInfo": "账号信息",
+    "AccountDetail": "账号详情",
+    "Name": "名称",
+    "Type": "类型",
+    "Username": "用户名",
+    "Address": "地址",
+    "Safe": "保险库",
+    "DateCreated": "创建时间",
+    "DateUpdated": "更新时间",
+    "Comment": "备注"
   },
   "acl": {
     "name": "名称",
