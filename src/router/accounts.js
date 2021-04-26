@@ -33,7 +33,7 @@ export default [
       {
         path: ':id/update',
         name: 'PAMAccountUpdate',
-        component: () => import('@/views/accounts/account/AccountCreate/index'),
+        component: () => import('@/views/accounts/account/AccountUpdate'),
         meta: { title: i18n.t('route.PAMAccountUpdate'), activeMenu: '/accounts/accounts' },
         hidden: true
       }
