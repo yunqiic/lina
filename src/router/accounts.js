@@ -69,7 +69,22 @@ export default [
         path: '',
         name: 'PAMSafeList',
         component: () => import('@/views/accounts/safe/SafeList'),
-        meta: { title: i18n.t('route.PAMSafeList'), activeMenu: '/accounts/safes' }
+        meta: { title: i18n.t('route.PAMSafeList'), activeMenu: '/accounts/safes' },
+        hidden: true
+      },
+      {
+        path: 'create',
+        name: 'PAMSafeCreate',
+        component: () => import('@/views/accounts/safe/SafeCreateUpdate'),
+        meta: { title: i18n.t('route.PAMSafeCreate'), activeMenu: '/accounts/safes' },
+        hidden: true
+      },
+      {
+        path: ':id/update',
+        name: 'PAMSafeUpdate',
+        component: () => import('@/views/accounts/safe/SafeCreateUpdate'),
+        meta: { title: i18n.t('route.PAMSafeUpdate'), activeMenu: '/accounts/safes' },
+        hidden: true
       }
     ]
   }
