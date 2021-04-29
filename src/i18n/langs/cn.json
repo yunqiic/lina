@@ -538,6 +538,7 @@
     "PAMAccountUpdate": "更新账号",
     "PAMAccountDetail": "账号详情",
     "Ticket":"工单",
+    "CommandConfirm": "命令复核",
     "AdminUserCreate": "创建管理用户",
     "AdminUserDetail": "管理用户详情",
     "AdminUserList": "管理用户",
@@ -911,7 +912,13 @@
       "ips": "请输入逗号分割的IP地址组",
       "fuzzySearch": "支持模糊搜索",
       "application": "请输入逗号分割的应用名称组"
-    }
+    },
+    "ApplyRunUser": "申请运行的用户",
+    "ApplyRunAsset": "申请运行的资产",
+    "ApplyRunSystemUser": "申请运行的系统用户",
+    "ApplyRunCommand": "申请运行的命令",
+    "ApplyFromSession": "会话",
+    "ApplyFromCMDFilterRule": "命令过滤规则"
   },
   "tree": {
     "AddAssetToNode": "添加资产到节点",
@@ -1013,6 +1020,7 @@
       "remoteAppPermissionRules": "远程应用授权规则"
     },
     "dateLastLogin": "最后登录日期",
+    "needUpdatePasswordNextLogin": "下次登录须修改密码",
     "UpdatePassword": "更新密码",
     "SetPublicKey": "设置SSH公钥",
     "passwordExpired": "密码过期了",
