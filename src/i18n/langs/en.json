@@ -530,6 +530,8 @@
   },
   "route": {
     "": "",
+    "PAMSafeList": "Safes",
+    "PAMAccountTypeList": "账号类型",
     "PAMAccount": "Accounts",
     "PAMAccountCreate": "Account create",
     "PAMAccountList": "Accounts",

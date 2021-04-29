@@ -532,6 +532,8 @@
   },
   "route": {
     "": "",
+    "PAMSafeList": "保险库",
+    "PAMAccountTypeList": "账号类型",
     "PAMAccount": "特权账号",
     "PAMAccountCreate": "创建账号",
     "PAMAccountList": "账号列表",

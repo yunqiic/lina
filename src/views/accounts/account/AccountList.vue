@@ -6,6 +6,7 @@
 import { GenericListPage } from '@/layout/components'
 
 export default {
+  name: 'AccountList',
   components: {
     GenericListPage
   },

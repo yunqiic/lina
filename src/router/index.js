@@ -90,7 +90,7 @@ export const allRoleRoutes = [
     name: 'Accounts',
     meta: {
       title: i18n.t('route.PAMAccount'),
-      icon: 'users'
+      icon: 'user-circle-o'
     },
     children: AccountsRoute
   },

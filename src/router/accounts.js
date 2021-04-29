@@ -38,5 +38,39 @@ export default [
         hidden: true
       }
     ]
+  },
+  {
+    path: 'account-types',
+    component: empty,
+    redirect: '',
+    meta: {
+      title: i18n.t('route.PAMAccountTypeList'),
+      licenseRequired: false
+    },
+    children: [
+      {
+        path: '',
+        name: 'PAMAccountTypeList',
+        component: () => import('@/views/accounts/account-type/AccountTypeList'),
+        meta: { title: i18n.t('route.PAMAccountTypeList'), activeMenu: '/accounts/account-types' }
+      }
+    ]
+  },
+  {
+    path: 'safes',
+    component: empty,
+    redirect: '',
+    meta: {
+      title: i18n.t('route.PAMSafeList'),
+      licenseRequired: false
+    },
+    children: [
+      {
+        path: '',
+        name: 'PAMSafeList',
+        component: () => import('@/views/accounts/safe/SafeList'),
+        meta: { title: i18n.t('route.PAMSafeList'), activeMenu: '/accounts/safes' }
+      }
+    ]
   }
 ]
