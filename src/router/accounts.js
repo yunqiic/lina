@@ -52,7 +52,15 @@ export default [
         path: '',
         name: 'PAMAccountTypeList',
         component: () => import('@/views/accounts/account-type/AccountTypeList'),
-        meta: { title: i18n.t('route.PAMAccountTypeList'), activeMenu: '/accounts/account-types' }
+        meta: { title: i18n.t('route.PAMAccountTypeList'), activeMenu: '/accounts/account-types' },
+        hidden: true
+      },
+      {
+        path: 'create',
+        name: 'PAMAccountTypeCreate',
+        component: () => import('@/views/accounts/account-type/AccountTypeCreate'),
+        meta: { title: i18n.t('route.PAMAccountTypeCreate'), activeMenu: '/accounts/account-types' },
+        hidden: true
       }
     ]
   },
