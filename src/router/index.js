@@ -28,6 +28,7 @@ const requireContext = require.context('@/views/xpack/', true, /router\.js$/)
   }
  */
 import UsersRoute from './users'
+import AccountsRoute from './accounts'
 import AssetsRoute from './assets'
 import ApplicationsRoute from './applications'
 import PermsRoute from './perms'
@@ -81,6 +82,17 @@ export const allRoleRoutes = [
         meta: { title: i18n.t('route.Dashboard'), icon: 'dashboard', permissions: [rolec.PERM_AUDIT] }
       }
     ]
+  },
+  {
+    path: '/accounts',
+    component: Layout,
+    redirect: '/accounts/asset-accounts/',
+    name: 'Accounts',
+    meta: {
+      title: i18n.t('route.Accounts'),
+      icon: 'address-book-o'
+    },
+    children: AccountsRoute
   },
   {
     path: '/users',

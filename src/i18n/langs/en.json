@@ -642,6 +642,11 @@
     "UserProfile": "User profile",
     "UserUpdate": "User update",
     "Users": "Users",
+    "Accounts": "Accounts",
+    "AssetAccount": "Asset Account",
+    "ApplicationAccount": "Application Account",
+    "ChangeAuthPlan": "Change Auth Plan",
+    "GatherUser": "Gather User",
     "WebFTP": "WebFTP",
     "WebTerminal": "Web Terminal",
     "Notifications": "Notifications"
@@ -916,6 +921,10 @@
     "ShowNodeInfo": "Show node information",
     "TestNodeAssetConnectivity": "Test node asset connectivity",
     "UpdateNodeAssetHardwareInfo": "Update node asset hardware information"
+  },
+  "accounts": {
+    "AssetAccount": "Asset Account",
+    "CreateAssetAccount": "Create asset account"
   },
   "users": {
     "Account": "Account",

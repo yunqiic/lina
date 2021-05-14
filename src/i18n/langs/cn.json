@@ -644,6 +644,11 @@
     "UserProfile": "个人信息",
     "UserUpdate": "更新用户",
     "Users": "用户管理",
+    "Accounts": "账号管理",
+    "AssetAccount": "资产账号",
+    "ApplicationAccount": "应用账号",
+    "ChangeAuthPlan": "改密计划",
+    "GatherUser": "收集用户",
     "WebFTP": "文件管理",
     "WebTerminal": "Web终端",
     "Notifications": "通知"
@@ -920,6 +925,12 @@
     "ShowNodeInfo": "显示节点详情",
     "TestNodeAssetConnectivity": "测试资产节点可连接性",
     "UpdateNodeAssetHardwareInfo": "更新节点资产硬件信息"
+  },
+  "accounts": {
+    "AssetAccount": "资产账号",
+    "ApplicationAccount": "应用账号",
+    "CreateAssetAccount": "创建资产账号",
+    "GatherUser": "收集用户",
   },
   "users": {
     "Account": "账户",
