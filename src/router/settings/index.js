@@ -25,7 +25,7 @@ export default {
       meta: {
         title: i18n.t('setting.Basic'),
         icon: 'gear',
-        permissions: ['settings.view_setting']
+        permissions: ['settings.change_basic']
       }
     },
     {
@@ -35,7 +35,7 @@ export default {
       meta: {
         title: i18n.t('setting.Email'),
         icon: 'envelope-o',
-        permissions: ['settings.view_setting']
+        permissions: ['settings.change_email']
       }
     },
     {
@@ -45,7 +45,7 @@ export default {
       meta: {
         title: i18n.t('setting.Auth'),
         icon: 'user-circle-o',
-        permissions: ['settings.view_setting']
+        permissions: ['settings.change_auth']
       }
     },
     {
@@ -55,7 +55,7 @@ export default {
       meta: {
         title: i18n.t('setting.MessageSub'),
         icon: 'bell-o',
-        permissions: ['settings.view_setting']
+        permissions: ['settings.view_settings']
       }
     },
     {
@@ -65,7 +65,7 @@ export default {
       meta: {
         title: i18n.t('setting.SMS'),
         icon: 'mobile-phone fa-lg',
-        permissions: ['settings.view_setting'],
+        permissions: ['settings.change_sms'],
         licenseRequired: true
       }
     },
@@ -75,7 +75,7 @@ export default {
       redirect: '',
       meta: {
         title: i18n.t('setting.Terminal'),
-        permissions: ['settings.view_setting']
+        permissions: ['settings.change_terminal_setting']
       },
       children: [
         {
@@ -187,7 +187,7 @@ export default {
       meta: {
         title: i18n.t('setting.Security'),
         icon: 'shield',
-        permissions: ['settings.view_setting']
+        permissions: ['settings.change_security']
       }
     },
     {
@@ -197,7 +197,7 @@ export default {
       meta: {
         title: i18n.t('setting.Cleaning'),
         icon: 'hourglass-2',
-        permissions: ['settings.view_setting']
+        permissions: ['settings.change_clean']
       }
     },
     {
@@ -268,7 +268,7 @@ export default {
       meta: {
         title: i18n.t('setting.Other'),
         icon: 'map-signs',
-        permissions: ['settings.view_setting']
+        permissions: ['settings.change_other']
       }
     },
     {
@@ -278,7 +278,7 @@ export default {
       meta: {
         title: i18n.t('setting.License'),
         icon: 'diamond',
-        permissions: ['settings.view_setting']
+        permissions: ['settings.view_settings']
       }
     }
   ]

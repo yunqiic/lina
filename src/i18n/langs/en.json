@@ -1419,6 +1419,7 @@
     "License": "License",
     "LicenseDetail": "License detail",
     "ComponentMonitor": "System Monitor",
+    "TerminalStatus": "Terminal status",
     "ServiceRatio": "Service ratio",
     "LoadStatus":"Status",
     "NormalLoad":"Normal",

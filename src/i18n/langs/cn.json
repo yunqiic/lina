@@ -1470,6 +1470,7 @@
     "InterfaceSettings": "界面设置",
     "License": "许可证",
     "ComponentMonitor": "组件监控",
+    "TerminalStatus": "终端状态",
     "ServiceRatio": "组件负载统计",
     "LoadStatus":"组件状态",
     "NormalLoad":"正常",

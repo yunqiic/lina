@@ -125,7 +125,7 @@ export default {
             formatter: (row) => (numTotFixed(row, 'memory_used'))
           },
           status: {
-            label: this.$t('xpack.LoadStatus'),
+            label: this.$t('xpack.TerminalStatus'),
             width: '120px',
             // formatter: DisplayFormatter,
             filterable: 'custom',

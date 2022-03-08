@@ -7,7 +7,7 @@
       <el-row :gutter="10">
         <el-col :span="18">
           <div style="padding-top: 6px;padding-bottom: 8px;">
-            <h2 style="text-align: center;font-weight: 350">{{ $t('xpack.LoadStatus') }}</h2>
+            <h2 style="text-align: center;font-weight: 350">{{ $t('xpack.TerminalStatus') }}</h2>
             <div class="progress">
               <div
                 class="progress-bar progress-bar-success"

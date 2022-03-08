@@ -48,7 +48,7 @@ export default {
           hidden: () => !this.$hasPerm('terminal.view_commandstorage')
         },
         {
-          title: this.$t('xpack.ComponentMonitor'),
+          title: this.$t('xpack.TerminalStatus'),
           name: 'Monitor',
           hidden: () => !this.$hasPerm('terminal.view_terminal')
         }
