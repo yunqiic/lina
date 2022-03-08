@@ -1,6 +1,6 @@
 <template>
   <Page>
-    <div v-if="$hasPerm('rbac.view_resourcestatistics')" class="home">
+    <div v-if="$hasPerm('rbac.view_dashboard')" class="home">
       <el-container class="container">
         <el-main class="main">
           <div class="content">
