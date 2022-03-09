@@ -278,7 +278,7 @@ export default {
       meta: {
         title: i18n.t('setting.License'),
         icon: 'diamond',
-        permissions: ['settings.view_settings']
+        permissions: ['xpack.view_license']
       }
     }
   ]
