@@ -7,7 +7,9 @@
       </template>
     </PageHeading>
     <PageContent>
-      <el-alert v-if="helpMessage" type="success"> <span v-html="helpMessage" /> </el-alert>
+      <el-alert v-if="helpMessage" type="success">
+        <span class="announcement-main" v-html="iHelpMessage" />
+      </el-alert>
       <slot />
     </PageContent>
   </div>
@@ -34,8 +36,11 @@ export default {
   },
   computed: {
     iTitle() {
-      // return ''
       return this.title || this.$route.meta.title
+    },
+    iHelpMessage() {
+      const message = _.cloneDeep(this.helpMessage)
+      return message.replace(/\\n/g, '<br/>')
     }
   }
 }
@@ -51,6 +56,10 @@ export default {
   }
   .print-margin{
     margin-top: 10px;
+  }
+  .announcement-main {
+    word-wrap:break-word;
+    white-space: pre-wrap;
   }
 }
 </style>
